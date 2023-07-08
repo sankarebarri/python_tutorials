@@ -9,7 +9,7 @@ class Employee:
     def full_name(self):
         return f"{self.first_name} {self.last_name}"
 
-## Creating instqances
+## Creating instances
 empl_1 = Employee('Mike', 'November', 50000)
 empl_2 = Employee('Oscar', 'Papa', 12000)
 
