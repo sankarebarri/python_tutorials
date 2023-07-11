@@ -68,6 +68,7 @@ print(new_emp_1.pay)
 new_emp_11 = Employee.from_string(emp_str_2)
 print(new_emp_11.email)
 print(new_emp_11.pay)
+print(new_emp_11.full_name())
 
 
 ### staticmethod
