@@ -26,11 +26,26 @@ class Employee:
     # readable representation of the object, meant to be use as a display to the un-user
     def __str__(self):
         return '{} - {}'.format(self.full_name(), self.email)
+    
+    # adding 2 employees pay
+    def __add__(self, other):
+        return self.pay + other.pay
 
+    def __len__(self):
+        return len(self.full_name())
 
 emp_1 = Employee("John", "Doe", 52131)
 emp_2 = Employee('Jane', 'Kate', 69856)
 
+
+# print the sum of 2 employees salary as defined with the __add__
+print(emp_1 + emp_2) # i don't have to do emp_1.pay + emp_2.pay
+
+# print the length of the fullname of the employee as defined by the __len__
+print(len(emp_1))
+
+print(len('test'))
+print('test'.__len__())
 
 # will print the __str__ if defined, else will fallback to __repr__
 print(emp_1)
