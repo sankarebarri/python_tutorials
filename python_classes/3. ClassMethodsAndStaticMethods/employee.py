@@ -52,7 +52,7 @@ print(Employee.raise_amount)
 print(emp_1.raise_amount)
 print(emp_2.raise_amount)
 
-### @classmethod as alternative constructor
+### @classmethod as an alternative constructor
 emp_str_1 = 'John-Doe-7000'
 emp_str_2 = 'Steve-Smith-7800'
 emp_str_3 = 'Jane-Doe-8000'
@@ -64,7 +64,7 @@ new_emp_1 = Employee(first, last, pay)
 print(new_emp_1.email)
 print(new_emp_1.pay)
 
-### Way to do with classmethod
+### Way to do it with classmethod
 new_emp_11 = Employee.from_string(emp_str_2)
 print(new_emp_11.email)
 print(new_emp_11.pay)
