@@ -1,0 +1,38 @@
+[
+    {
+        "name": "John Smith",
+        "age": 38,
+        "on_vacation": false,
+        "test_scores": [
+            33,
+            55,
+            66,
+            88,
+            96
+        ]
+    },
+    {
+        "name": "Ashley Doe",
+        "age": 38,
+        "on_vacation": false,
+        "test_scores": [
+            98,
+            14,
+            25,
+            35,
+            69
+        ]
+    },
+    {
+        "name": "Bull Smith",
+        "age": 86,
+        "on_vacation": true,
+        "test_scores": [
+            96,
+            75,
+            25,
+            36,
+            65
+        ]
+    }
+]
