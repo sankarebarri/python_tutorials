@@ -15,7 +15,7 @@ students = []
 with open('students.csv') as file:
     for line in file:
         # student = {}
-        name, grade = line.rstrip().split(',')
+        name, *grade = line.rstrip().split(',')
         # student['name'] = name
         # student['grade'] = grade
         student = {'name': name, 'grade': grade}
@@ -33,7 +33,11 @@ def get_name(student):
 def get_grade(student):
     return student['grade']
 
-for info in sorted(students, key=get_grade, reverse=True):
-    print(f"{info['name']} is in {info['grade']}")
+# for info in sorted(students, key=get_grade, reverse=True):
+#     print(f"{info['name']} is in {info['grade']}")
 # students = {}
+
+# using lambda functions
+for info in sorted(students, key=lambda student: student['name'], reverse=True):
+    print(f"{info['name']} is in {info['grade']}")
 
