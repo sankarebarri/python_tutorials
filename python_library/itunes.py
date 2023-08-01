@@ -16,5 +16,10 @@ import sys
 response_1 = requests.get('https://dummyjson.com/products')
 # print(json.dumps(response_1.json(), indent=4))
 prod = response_1.json()
+import csv
 for p in prod['products']:
-    print(p['title'], p['price'])
+    title = p['title']
+    price = p['price']
+    
+    with open('json_products.csv', 'a', newline='') as file:
+        file.write(f'{title},{price}\n')
