@@ -14,7 +14,10 @@ import re
 re_email = input("What's your email: ").strip()
 
 # if re.search(r"^.+@.+\.edu$", re_email):
-if re.search(r"^[^@]+@[^@]+\.edu$", re_email):
+# if re.search(r"^[^@]+@[^@]+\.edu$", re_email):
+# if re.search(r"^[a-zA-Z0-9_]+@[a-zA-Z0-9_]+\.edu$", re_email):
+# if re.search(r"^\w+@\w\.(edu|gov|com|info)$"): # \w represents [a-zA-Z0-9_]
+if re.search(r"^(\w\s)+@\w\.(edu|gov|com|info)$"): # \w represents [a-zA-Z0-9_]
     print("Email Valid")
 else:
     print("Email Invalid")
