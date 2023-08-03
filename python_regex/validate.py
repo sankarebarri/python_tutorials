@@ -13,7 +13,8 @@ import re
 
 re_email = input("What's your email: ").strip()
 
-if re.search(r".*@.+\.edu", re_email):
+# if re.search(r"^.+@.+\.edu$", re_email):
+if re.search(r"^[^@]+@[^@]+\.edu$", re_email):
     print("Email Valid")
 else:
     print("Email Invalid")
