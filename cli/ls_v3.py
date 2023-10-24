@@ -2,15 +2,18 @@ import argparse
 from pathlib import Path
 import datetime
 
-# prog=ls would store the program name as ls
 parser = argparse.ArgumentParser(
     prog="ls",
-    description="It lists the content of this directory",
-    epilog="Thanks for using %(prog)s! :)",
+    description="Print out contents of this directory",
+    epilog="Thank you for using %(prog)s! :)",
+    argument_default=argparse.SUPPRESS,
 )
 
-parser.add_argument("path")
-parser.add_argument("-l", "--long", action="store_true")
+general = parser.add_argument_group("general output")
+general.add_argument("path")
+
+detailed = parser.add_argument_group("detailed output")
+detailed.add_argument("-l", "--long", action="store_true")
 
 args = parser.parse_args()
 target_dir = Path(args.path)
@@ -32,4 +35,9 @@ def build_output(entry, long=False):
 
 
 for entry in target_dir.iterdir():
-    print(build_output(entry, long=args.long))
+    try:
+        long = args.long
+    except AttributeError:
+        long = False
+    # print(build_output(entry, long=args.long))
+    print(build_output(entry, long=long))

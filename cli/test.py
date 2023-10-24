@@ -1,15 +1,22 @@
-class Test:
-    def __init__(self):
-        self.name = ""
-        self.you = ""
-        self.me = ""
+import argparse
 
-    def __str__(self):
-        return (
-            f"{self.name}",
-            f"{self.you}"
-        )
+parser = argparse.ArgumentParser()
 
+parser.add_argument("--save")
+parser.add_argument(
+    "--file_name",
+    nargs=1
+)
+parser.add_argument("--show", action="store_true")
 
-test = Test()
-print(test)
+args = parser.parse_args()
+
+if args.file_name:
+    print(args.file_name[0])
+else:
+    print("default")
+
+if args.show:
+    print("show")
+else:
+    print("no show")
